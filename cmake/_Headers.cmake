@@ -5,22 +5,5 @@ if( MULLE_TRACE_INCLUDE)
    MESSAGE( STATUS "# Include \"${CMAKE_CURRENT_LIST_FILE}\"" )
 endif()
 
-set( INCLUDE_DIRS
-src
-)
-
-set( PRIVATE_HEADERS
-src/import-private.h
-src/include-private.h
-src/mulle-foundation-setup-private.h
-src/mulle-foundation-startup-private.inc
-)
-
-set( PUBLIC_HEADERS
-src/MulleFoundation.h
-src/MulleObjCLoader+MulleFoundation.h
-src/import.h
-src/include.h
-src/version.h
-)
+# no headers
 

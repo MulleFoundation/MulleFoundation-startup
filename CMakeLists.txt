@@ -1,6 +1,6 @@
 cmake_minimum_required( VERSION 3.1)
 
-project( MulleFoundation C)
+project( MulleFoundation-startup C)
 
 ### mulle-sde environment
 
@@ -15,9 +15,7 @@ include( Files)
 ### Library
 
 if( HEADERS_PHASE)
-   install( FILES ${INSTALL_PUBLIC_HEADERS}  DESTINATION "include/MulleFoundation")
-   install( FILES ${INSTALL_PRIVATE_HEADERS} DESTINATION "include/MulleFoundation/private")
-   install( FILES ${CMAKE_INCLUDES}          DESTINATION "include/MulleFoundation/cmake")
+   install( FILES ${CMAKE_INCLUDES} DESTINATION "include/MulleFoundation/cmake")
 
    # short cut out
    if( NOT COMPILE_PHASE AND NOT LINK_PHASE)
@@ -25,9 +23,19 @@ if( HEADERS_PHASE)
    endif()
 endif()
 
+if( BUILD_SHARED_LIBS)
+   message( FATAL_ERROR "Startup library must be built static")
+endif()
+
+# this is an option
+set( CREATE_OBJC_LOADER_INC OFF)
+
+
 if( LINK_PHASE)
    include( Dependencies OPTIONAL)
 endif()
+
+unset( STARTUP_LIBRARY_NAME)
 
 include( Library)
 include( InstallLibrary)

@@ -7,10 +7,11 @@
 //
 #define _GNU_SOURCE
 
-#import "import.h"
+#import <MulleFoundation/MulleFoundation.h>
 
-#import "version.h"
-#import "mulle-foundation-startup-private.inc"
+#import <MulleFoundation/private/mulle-foundation-startup-private.inc>
+
+#define MULLE_FOUNDATION_STARTUP_VERSION  ((1 << 20) | (16 << 8) | 0)
 
 
 static void   bang( struct _mulle_objc_universe *universe,
