@@ -15,9 +15,9 @@ endif()
 
 # include before (!)
 
-include( StandaloneAuxC OPTIONAL)
-
 if( STANDALONE)
+   include( PreStandaloneAuxC OPTIONAL)
+
    if( NOT LIBRARY_NAME)
       set( LIBRARY_NAME "${PROJECT_NAME}")
    endif()
@@ -34,7 +34,7 @@ if( STANDALONE)
    # A standalone library has all symbols and nothing is optimized away
    # sorta like a big static library, just shared, The OS specific stuff
    # should be shared libraries, otherwise they are only normally
-   # linked against (only required symbols.
+   # linked against (only required symbols).
    #
    if( NOT STANDALONE_ALL_LOAD_LIBRARIES)
       set( STANDALONE_ALL_LOAD_LIBRARIES
@@ -148,8 +148,6 @@ and everybody will be happy")
       # MulleObjCStandardFoundationStandalone confuses cmake it seems. But they
       # are implicitly added.
       #
-      # creates FORCE_STANDALONE_ALL_LOAD_LIBRARIES
-
       CreateForceAllLoadList( STANDALONE_ALL_LOAD_LIBRARIES FORCE_STANDALONE_ALL_LOAD_LIBRARIES)
 
       target_link_libraries( ${STANDALONE_LIBRARY_NAME}
@@ -161,6 +159,8 @@ and everybody will be happy")
          ${INSTALL_LIBRARY_TARGETS}
          ${STANDALONE_LIBRARY_NAME}
       )
+
+      include( PostStandaloneAuxC OPTIONAL)
 
       message( STATUS "STANDALONE_LIBRARY_NAME is ${STANDALONE_LIBRARY_NAME}")
       message( STATUS "STANDALONE_ALL_LOAD_LIBRARIES is ${STANDALONE_ALL_LOAD_LIBRARIES}")
