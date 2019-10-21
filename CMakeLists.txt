@@ -15,9 +15,6 @@ include( Files)
 ### Library
 
 if( HEADERS_PHASE)
-   install( FILES ${CMAKE_INCLUDES} DESTINATION "include/MulleFoundation/cmake")
-
-   # short cut out
    if( NOT COMPILE_PHASE AND NOT LINK_PHASE)
       return()
    endif()
