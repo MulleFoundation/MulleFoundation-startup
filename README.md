@@ -9,15 +9,15 @@ function for executables, that link against
 
 Build Status | Release Version
 -------------|-----------------------------------
-[![Build Status](https://travis-ci.org/mulle-objc/MulleFoundation-startup.svg)](https://travis-ci.org/mulle-objc/mulle-objc) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-objc/MulleFoundation-startup.svg) [![Build Status](https://travis-ci.org/mulle-objc/MulleFoundation-startup.svg?branch=release)](https://travis-ci.org/mulle-objc/MulleFoundation-startup)
+[![Build Status](https://travis-ci.org/MulleFoundation/MulleFoundation-startup.svg)](https://travis-ci.org/MulleFoundation/MulleFoundation-startup) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleFoundation-startup.svg) [![Build Status](https://travis-ci.org/mulle-objc/MulleFoundation-startup.svg?branch=release)](https://travis-ci.org/MulleFoundation/MulleFoundation-startup)
 
 
 ## Sourcetree
 
 The main raison d'être of MulleFoundation-startup as a
-seperate library is to bequeath the required dependencies
+separate library is to bequeath the required dependencies
 [mulle-atinit](//github.com/mulle-core/mulle-atinit) and
-[mulle-atexit](//github.com/mulle-core/mulle-atexit) for linking with the
+[mulle-atexit](//github.com/mulle-core/mulle-atexit) for linking the
 executable.
 
 
@@ -29,11 +29,12 @@ installation instructions.
 
 ## Build
 
+This is a [mulle-sde]/(//github.com/mulle-sde) project which will
+fetch all dependencies and build with `mulle-sde craft`.
+
 ### Manually with cmake
 
-Install all above prerequisites:
-
-now build the project
+Install all prerequisites (use mulle-sde to figure them out) then:
 
 ```
 (
@@ -44,9 +45,24 @@ now build the project
 )
 ```
 
-### Conveniently with mulle-sde
 
-Install [mulle-sde]/(//github.com/mulle-sde) and run `mulle-sde craft`.
+### Legacy install
+
+```
+mulle-sde install --prefix "/usr/local" \
+                  "https://github.com/MulleFoundation/Foundation-startup/archive/latest.tar.gz"
+```
+
+#### Legacy install prerelease
+
+For testing before release:
+
+```
+source `curl -L https://raw.githubusercontent.com/MulleFoundation/Foundation/prerelease/.mulle/etc/env/environment-host-travis-ci-prerelease.sh`
+mulle-sde install --branch prerelease \
+                  --prefix "/tmp/usr" \
+                  "https://github.com/MulleFoundation/Foundation-startup.git"
+```
 
 
 ### Platforms and Compilers
