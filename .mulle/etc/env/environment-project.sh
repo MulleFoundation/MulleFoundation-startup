@@ -1,7 +1,7 @@
 #
 #
 #
-export PROJECT_NAME="MulleFoundation"
+export PROJECT_NAME="MulleFoundation-startup"
 
 
 #
