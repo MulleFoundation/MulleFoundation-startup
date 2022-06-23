@@ -1,7 +1,6 @@
-cmake_minimum_required( VERSION 3.1)
+cmake_minimum_required( VERSION 3.15)
 
 project( MulleFoundation-startup C)
-add_definitions( -DMULLE_FOUNDATION_EXTERN_GLOBAL=extern)
 
 
 ### mulle-sde environment
