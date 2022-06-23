@@ -9,7 +9,7 @@ function for executables, that link against
 
 Build Status | Release Version
 -------------|-----------------------------------
-[![Build Status](https://travis-ci.org/MulleFoundation/MulleFoundation-startup.svg)](https://travis-ci.org/MulleFoundation/MulleFoundation-startup) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleFoundation-startup.svg) [![Build Status](https://travis-ci.org/mulle-objc/MulleFoundation-startup.svg?branch=release)](https://travis-ci.org/MulleFoundation/MulleFoundation-startup)
+[![Build Status](https://github.com/MulleFoundation/MulleFoundation-startup.svg)](https://github.com/MulleFoundation/MulleFoundation/actions-startup) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleFoundation-startup.svg) [![Build Status](https://travis-ci.org/mulle-objc/MulleFoundation-startup/workflows/CI/badge.svg?branch=release)](https://github.com/MulleFoundation/MulleFoundation/actions-startup)
 
 
 ## Sourcetree
