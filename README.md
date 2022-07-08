@@ -4,12 +4,12 @@
 
 This static library provides the required `__register_mulle_objc_universe`
 function for executables, that link against
-[MulleFoundation](https://github.com/mulle-objc/MulleFoundation).
+[MulleFoundation](//github.com/MulleFoundation/MulleFoundation).
 
 
 Build Status | Release Version
 -------------|-----------------------------------
-[![Build Status](https://github.com/MulleFoundation/MulleFoundation-startup.svg)](https://github.com/MulleFoundation/MulleFoundation/actions-startup) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleFoundation-startup.svg) [![Build Status](https://travis-ci.org/mulle-objc/MulleFoundation-startup/workflows/CI/badge.svg?branch=release)](https://github.com/MulleFoundation/MulleFoundation/actions-startup)
+[![Build Status](//github.com/MulleFoundation/MulleFoundation-startup.svg)](//github.com/MulleFoundation/MulleFoundation-startup/actions) | ![Mulle kybernetiK tag](//img.shields.io/github/tag/MulleFoundation/MulleFoundation-startup.svg) [![Build Status](//travis-ci.org/mulle-objc/MulleFoundation-startup/workflows/CI/badge.svg?branch=release)](//github.com/MulleFoundation/MulleFoundation-startup/actions)
 
 
 ## Sourcetree
@@ -55,7 +55,7 @@ Install all prerequisites (use mulle-sde to figure them out) then:
 
 ```
 mulle-sde install --prefix "/usr/local" \
-                  "https://github.com/MulleFoundation/Foundation-startup/archive/latest.tar.gz"
+                  "//github.com/MulleFoundation/Foundation-startup/archive/latest.tar.gz"
 ```
 
 #### Legacy install prerelease
@@ -63,10 +63,10 @@ mulle-sde install --prefix "/usr/local" \
 For testing before release:
 
 ```
-source `curl -L https://raw.githubusercontent.com/MulleFoundation/Foundation/prerelease/.mulle/etc/env/environment-host-travis-ci-prerelease.sh`
+source `curl -L //raw.githubusercontent.com/MulleFoundation/Foundation/prerelease/.mulle/etc/env/environment-host-travis-ci-prerelease.sh`
 mulle-sde install --branch prerelease \
                   --prefix "/tmp/usr" \
-                  "https://github.com/MulleFoundation/Foundation-startup.git"
+                  "//github.com/MulleFoundation/Foundation-startup.git"
 ```
 
 
