@@ -11,7 +11,7 @@
 
 #import <MulleFoundation/private/mulle-foundation-startup-private.inc>
 
-#define MULLE_FOUNDATION_STARTUP_VERSION  ((0 << 20) | (20 << 8) | 1)
+#define MULLE_FOUNDATION_STARTUP_VERSION  ((0 << 20) | (20 << 8) | 2)
 
 
 static void   bang( struct _mulle_objc_universe *universe,
