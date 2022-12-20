@@ -8,7 +8,7 @@
    "license" : "UNLICENSED",
    "repository" : {
       "type" : "git",
-      "url" : "MulleFoundation/MulleFoundation-startup"
+      "url" : "github:MulleFoundation/MulleFoundation-startup"
    },
    "dependencies" : {
       "MulleFoundation" : "git://github.com/MulleFoundation/MulleFoundation",
