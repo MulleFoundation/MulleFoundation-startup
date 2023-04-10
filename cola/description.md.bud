@@ -1,0 +1,4 @@
+This static library provides the required `__register_mulle_objc_universe`
+function for executables, that link against
+[MulleFoundation](//github.com/MulleFoundation/MulleFoundation).
+

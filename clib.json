@@ -1,0 +1,17 @@
+{
+   "name" : "MulleFoundation-startup",
+   "version" : "0.20.2",
+   "description" : "Startup library for MulleFoundation",
+   "keywords" : [],
+   "license" : "BSD-3-Clause",
+   "repo" : "MulleFoundation/MulleFoundation-startup",
+   "src" : [
+      "src/MulleFoundation-startup.m"
+   ],
+   "dependencies" : {
+      "MulleFoundation/MulleFoundation": "*",
+      "mulle-core/mulle-atinit": "*",
+      "mulle-core/mulle-atexit": "*",
+      "mulle-core/mulle-dlfcn": "*"
+   }
+}

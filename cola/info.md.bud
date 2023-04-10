@@ -1,0 +1,9 @@
+## Sourcetree
+
+The main raison d'être of MulleFoundation-startup as a
+separate library is to bequeath the required dependencies
+[mulle-atinit](//github.com/mulle-core/mulle-atinit) and
+[mulle-atexit](//github.com/mulle-core/mulle-atexit) for linking the
+executable.
+
+
