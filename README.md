@@ -7,9 +7,11 @@ function for executables, that link against
 [MulleFoundation](//github.com/MulleFoundation/MulleFoundation).
 
 
-Build Status | Release Version
--------------|-----------------------------------
-[![Build Status](https://github.com/MulleFoundation/MulleFoundation-startup.svg)](//github.com/MulleFoundation/MulleFoundation-startup/actions) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleFoundation-startup.svg) [![Build Status](https://github.com/MulleFoundation/MulleFoundation-startup/workflows/CI/badge.svg?branch=release)](//github.com/MulleFoundation/MulleFoundation-startup/actions)
+| Release Version                                       | Release Notes
+|-------------------------------------------------------|--------------
+| ![Mulle kybernetiK tag](https://img.shields.io/github/tag//MulleFoundation-startup.svg?branch=release) [![Build Status](https://github.com//MulleFoundation-startup/workflows/CI/badge.svg?branch=release)](//github.com//MulleFoundation-startup/actions)| [RELEASENOTES](RELEASENOTES.md) |
+
+
 
 
 ## Sourcetree
@@ -21,64 +23,63 @@ separate library is to bequeath the required dependencies
 executable.
 
 
+
+## Requirements
+
+|   Requirement         | Release Version  | Description
+|-----------------------|------------------|---------------
+| [MulleFoundation](https://github.com/MulleFoundation/MulleFoundation) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag//.svg) [![Build Status](https://github.com///workflows/CI/badge.svg?branch=release)](https://github.com///actions/workflows/mulle-sde-ci.yml) | 💍 Umbrella library for the MulleFoundation
+| [mulle-atinit](https://github.com/mulle-core/mulle-atinit) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag//.svg) [![Build Status](https://github.com///workflows/CI/badge.svg?branch=release)](https://github.com///actions/workflows/mulle-sde-ci.yml) | 🤱🏼 Compatibility library for deterministic initializers
+| [mulle-atexit](https://github.com/mulle-core/mulle-atexit) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag//.svg) [![Build Status](https://github.com///workflows/CI/badge.svg?branch=release)](https://github.com///actions/workflows/mulle-sde-ci.yml) | 👼 Compatibility library to fix atexit
+| [mulle-objc-debug](https://github.com/mulle-objc/mulle-objc-debug) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag//.svg) [![Build Status](https://github.com///workflows/CI/badge.svg?branch=release)](https://github.com///actions/workflows/mulle-sde-ci.yml) | 🐞 Debug support for the mulle-objc-runtime
+
 ### You are here
 
 ![Overview](overview.dot.svg)
 
+## Add
+
+Use [mulle-sde](//github.com/mulle-sde) to add MulleFoundation-startup to your project:
+
+``` sh
+mulle-sde add github:MulleFoundation/MulleFoundation-startup
+```
 
 ## Install
 
-See [mulle-foundation-developer](//github.com/MulleFoundation/mulle-foundation-developer) for
-installation instructions.
+### Install with mulle-sde
 
+Use [mulle-sde](//github.com/mulle-sde) to build and install MulleFoundation-startup and all dependencies:
 
-## Build
-
-This is a [mulle-sde]/(//github.com/mulle-sde) project which will
-fetch all dependencies and build with `mulle-sde craft`.
-
-### Manually with cmake
-
-Install all prerequisites (use mulle-sde to figure them out) then:
-
-```
-(
-   mkdir build &&
-   cd build &&
-   cmake .. &&
-   make
-)
+``` sh
+mulle-sde install --prefix /usr/local \
+   https://github.com/MulleFoundation/MulleFoundation-startup/archive/latest.tar.gz
 ```
 
+### Manual Installation
 
-### Legacy install
+Install the requirements:
 
+| Requirements                                 | Description
+|----------------------------------------------|-----------------------
+| [MulleFoundation](https://github.com/MulleFoundation/MulleFoundation)             | 💍 Umbrella library for the MulleFoundation
+| [mulle-atinit](https://github.com/mulle-core/mulle-atinit)             | 🤱🏼 Compatibility library for deterministic initializers
+| [mulle-atexit](https://github.com/mulle-core/mulle-atexit)             | 👼 Compatibility library to fix atexit
+| [mulle-objc-debug](https://github.com/mulle-objc/mulle-objc-debug)             | 🐞 Debug support for the mulle-objc-runtime
+
+Install **MulleFoundation-startup** into `/usr/local` with [cmake](https://cmake.org):
+
+``` sh
+cmake -B build \
+      -DCMAKE_INSTALL_PREFIX=/usr/local \
+      -DCMAKE_PREFIX_PATH=/usr/local \
+      -DCMAKE_BUILD_TYPE=Release &&
+cmake --build build --config Release &&
+cmake --install build --config Release
 ```
-mulle-sde install --prefix "/usr/local" \
-                  "//github.com/MulleFoundation/Foundation-startup/archive/latest.tar.gz"
-```
-
-#### Legacy install prerelease
-
-For testing before release:
-
-```
-source `curl -L //raw.githubusercontent.com/MulleFoundation/Foundation/prerelease/.mulle/etc/env/environment-host-travis-ci-prerelease.sh`
-mulle-sde install --branch prerelease \
-                  --prefix "/tmp/usr" \
-                  "//github.com/MulleFoundation/Foundation-startup.git"
-```
-
-
-### Platforms and Compilers
-
-All platforms and compilers supported by
-[mulle-c11](//github.com/mulle-c/mulle-c11/) and
-[mulle-thread](//github.com/mulle-concurrent/mulle-thread/).
-
 
 ## Author
 
-[Nat!](//www.mulle-kybernetik.com/weblog) for
-[Mulle kybernetiK](//www.mulle-kybernetik.com) and
-[Codeon GmbH](//www.codeon.de)
+[Nat!](https://mulle-kybernetik.com/weblog) for Mulle kybernetiK
+
+

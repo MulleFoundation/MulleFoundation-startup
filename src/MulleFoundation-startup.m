@@ -9,9 +9,9 @@
 
 #import <MulleFoundation/MulleFoundation.h>
 
-#import <MulleFoundation/private/mulle-foundation-startup-private.inc>
+#import <MulleFoundation/mulle-foundation-startup-private.inc>
 
-#define MULLE_FOUNDATION_STARTUP_VERSION  ((0 << 20) | (20 << 8) | 2)
+#define MULLE_FOUNDATION_STARTUP_VERSION  ((0 << 20) | (20 << 8) | 3)
 
 
 static void   bang( struct _mulle_objc_universe *universe,
