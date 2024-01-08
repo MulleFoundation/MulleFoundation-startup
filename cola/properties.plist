@@ -1,7 +1,7 @@
 {
    project =
    {
-      description="▶️ Startup library for MulleFoundation";
+      description="▶️  Startup code for the MulleFoundation";
       domain="github";
       name="MulleFoundation-startup";
       user="MulleFoundation";
