@@ -1,15 +1,16 @@
 # MulleFoundation-startup
 
-#### ▶️ Startup library for MulleFoundation
+#### ▶️  Startup code for the MulleFoundation
 
 This static library provides the required `__register_mulle_objc_universe`
 function for executables, that link against
 [MulleFoundation](//github.com/MulleFoundation/MulleFoundation).
 
 
+
 | Release Version                                       | Release Notes
 |-------------------------------------------------------|--------------
-| ![Mulle kybernetiK tag](https://img.shields.io/github/tag//MulleFoundation-startup.svg?branch=release) [![Build Status](https://github.com//MulleFoundation-startup/workflows/CI/badge.svg?branch=release)](//github.com//MulleFoundation-startup/actions)| [RELEASENOTES](RELEASENOTES.md) |
+| ![Mulle kybernetiK tag](https://img.shields.io/github/tag/MulleFoundation/MulleFoundation-startup.svg?branch=release) [![Build Status](https://github.com/MulleFoundation/MulleFoundation-startup/workflows/CI/badge.svg?branch=release)](//github.com/MulleFoundation/MulleFoundation-startup/actions) | [RELEASENOTES](RELEASENOTES.md) |
 
 
 
@@ -83,6 +84,6 @@ cmake --install build --config Release
 
 ## Author
 
-[Nat!](https://mulle-kybernetik.com/weblog) for Mulle kybernetiK
+[Nat!](https://mulle-kybernetik.com/weblog) for Mulle kybernetiK  
 
 
