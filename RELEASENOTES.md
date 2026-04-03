@@ -71,7 +71,7 @@ Various small improvements
 
 ### 0.13.1
 
-* fixed and improved objc-loader.inc
+* fixed and improved objc-deps.inc
 * modernize mulle-sde cmake
 
 ## 0.13.0
