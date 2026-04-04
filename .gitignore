@@ -74,3 +74,4 @@ test*/**/*.test.*
 !/README.md
 .roam
 .graveyard
+*.tmp.*
