@@ -15,6 +15,11 @@ function for executables, that link against
 
 
 
+## Documentation & Guides
+
+* [API Summary](asset/dox/api/toc)
+
+
 
 ## Sourcetree
 
