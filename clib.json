@@ -6,11 +6,10 @@
    "license" : "BSD-3-Clause",
    "repo" : "MulleFoundation/MulleFoundation-startup",
    "src" : [
-      "asset/dox/TOC.md",
+      "asset/dox/api/toc/index.md",
       "src/MulleFoundation-startup.m"
    ],
    "dependencies" : {
-      "MulleFoundation/MulleFoundation": "*",
-      "mulle-core/mulle-stacktrace": "*"
+      "MulleFoundation/MulleFoundation": "*"
    }
 }
