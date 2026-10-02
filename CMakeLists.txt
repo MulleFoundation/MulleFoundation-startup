@@ -1,6 +1,6 @@
 cmake_minimum_required( VERSION 3.13...99.99)
 
-project( MulleFoundation-startup VERSION 0.21.0 LANGUAGES C)
+project( MulleFoundation-startup VERSION 0.21.1 LANGUAGES C)
 
 
 ### mulle-sde environment
@@ -41,6 +41,15 @@ include( Library)
 # use LIBRARY_COMPILE_TARGET for compiler options
 target_compile_definitions( "${LIBRARY_COMPILE_TARGET}" PUBLIC)
 target_compile_options( "${LIBRARY_COMPILE_TARGET}" PUBLIC -Wall)
+
+# When mulle-objc-runtime is built from source alongside us (add_subdirectory),
+# its public headers are materialized into ${CMAKE_BINARY_DIR}/include by a
+# "mulle-objc-runtime-headers" copy target. Our sources transitively include
+# <mulle-objc-runtime/...>, so order our compile after that copy. No-op when the
+# runtime comes from a prebuilt SDK (the target does not exist then).
+if( TARGET mulle-objc-runtime-headers)
+   add_dependencies( "${LIBRARY_COMPILE_TARGET}" mulle-objc-runtime-headers)
+endif()
 # use LIBRARY_LINK_TARGET for linker options
 if( LINK_PHASE)
    target_link_options( "${LIBRARY_LINK_TARGET}" PUBLIC)
@@ -50,8 +59,8 @@ endif()
 include( InstallLibrary)
 
 if( LINK_PHASE)
-   include( InstallCMakeInclude)
-   include( InstallCMakePackage)
+   include( AddSubdirectorySupport)
+   include( FindPackageSupport)
 endif() 
 
 include( FinalOutput OPTIONAL)

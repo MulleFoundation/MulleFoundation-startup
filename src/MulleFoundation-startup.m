@@ -34,9 +34,14 @@
 //
 #define _GNU_SOURCE
 
-#import <MulleFoundation/MulleFoundation.h>
+// Pull in the MulleObjC umbrella first: it establishes the base types and
+// macros (NSUInteger, va_list via its includes, MULLE_OBJC_GLOBAL, ...) that
+// the -private headers below rely on but do not include themselves.
+#import <MulleObjC/MulleObjC.h>
 
-#import <MulleFoundation/mulle-foundation-startup-private.inc>
+#import <MulleObjC/mulle-objc-universeconfiguration-private.h>
+#import <MulleObjCStandardFoundation/mulle-foundation-universeconfiguration-private.h>
+#import <MulleObjCStandardFoundation/mulle-foundation-startup-private.inc>
 
 #include <mulle-stacktrace/mulle-stacktrace.h>
 
@@ -46,7 +51,7 @@ void
       struct _mulle_objc_universe *universe,
       void (*callback)( FILE *fp));
 
-#define MULLE_FOUNDATION__STARTUP_VERSION  ((0UL << 20) | (21 << 8) | 0)
+#define MULLE_FOUNDATION__STARTUP_VERSION  ((0UL << 20) | (21 << 8) | 1)
 
 
 static void   bang( struct _mulle_objc_universe *universe,
@@ -56,7 +61,7 @@ static void   bang( struct _mulle_objc_universe *universe,
    struct _mulle_objc_universeconfiguration   config;
 
    mulle_foundation_universeconfiguration_set_defaults( &config);
-   MulleFoundationBang( universe, allocator, &config);
+   MulleObjCStandardFoundationBang( universe, allocator, &config);
    mulle_objc_universe_set_stacktrace_callback( universe,
                                                  mulle_stacktrace_once);
 }
