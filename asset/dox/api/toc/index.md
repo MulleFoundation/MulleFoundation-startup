@@ -13,8 +13,8 @@ The single source file, `src/MulleFoundation-startup.m`, runs **before
 
 - Applies default values to the ObjC universe configuration via
   `mulle_foundation_universeconfiguration_set_defaults`.
-- Calls `MulleFoundationBang` to initialize the MulleFoundation universe
-  (classes, protocols, and functions become usable).
+- Calls `MulleObjCStandardFoundationBang` to initialize the MulleFoundation
+  universe (classes, protocols, and functions become usable).
 - Registers a stacktrace callback on the ObjC universe so that exceptions and
   runtime errors produce stack traces (added in 0.21.0).
 
@@ -44,9 +44,10 @@ endif()
 ### Startup Hook Mechanism
 The startup function `bang` is wired into the ObjC runtime universe startup
 sequence through the private include
-`<MulleFoundation/mulle-foundation-startup-private.inc>` (owned by
-MulleFoundation). This gives the library its `__register_mulle_objc_universe`
-entry point without exposing any public API of its own.
+`<MulleObjCStandardFoundation/mulle-foundation-startup-private.inc>` (owned by
+MulleObjCStandardFoundation). This gives the library its
+`__register_mulle_objc_universe` entry point without exposing any public API of
+its own.
 
 ### Stacktrace Callback (since 0.21.0)
 During startup, the library calls the MulleObjCRuntime function
@@ -64,7 +65,7 @@ public header files. The following is declared inside
 
 - **`MULLE_FOUNDATION__STARTUP_VERSION`**
   - Encoding of the library version, defined as:
-    `((0UL << 20) | (21 << 8) | 0)` (i.e. version 0.21.0).
+    `((0UL << 20) | (21 << 8) | 1)` (i.e. version 0.21.1).
 
 ### Internal Startup Hook (`bang`)
 
@@ -75,8 +76,8 @@ public header files. The following is declared inside
   1. `mulle_foundation_universeconfiguration_set_defaults( &config)` — fills a
      `struct _mulle_objc_universeconfiguration` with the default universe
      configuration.
-  2. `MulleFoundationBang( universe, allocator, &config)` — performs the actual
-     MulleFoundation bootstrap.
+  2. `MulleObjCStandardFoundationBang( universe, allocator, &config)` — performs
+     the actual MulleFoundation bootstrap.
   3. `mulle_objc_universe_set_stacktrace_callback( universe, mulle_stacktrace_once)`
      — installs the stacktrace-once callback for subsequent diagnostics.
 
@@ -129,8 +130,8 @@ void
   executable startup component and is intentionally rejected as a shared
   library by its own CMake configuration.
 - Do not call internal startup functions (e.g. `bang`,
-  `MulleFoundationBang`) yourself; they run automatically and must run exactly
-  once with a proper universe.
+  `MulleObjCStandardFoundationBang`) yourself; they run automatically and must
+  run exactly once with a proper universe.
 
 ## 6. Integration Examples
 
@@ -149,7 +150,7 @@ int   main( int argc, char *argv[])
    pool = [[NSAutoreleasePool alloc] init];   // only allowed inside main
    // MulleFoundation-startup has already run:
    // - universe configuration set up
-   // - MulleFoundationBang executed
+   // - MulleObjCStandardFoundationBang executed
    // - stacktrace callback installed
 
    [pool release];
@@ -194,7 +195,8 @@ mulle-sde add github:MulleFoundation/MulleFoundation-startup
 Direct `mulle-sde` dependencies (from `.mulle/etc/sourcetree/config` and
 `clib.json`):
 
-- `MulleFoundation` (the umlbrella bootstrap it initializes)
+- `mulle-objc-cc` (makes `mulle-clang` the default Objective-C compiler)
+- `MulleFoundation` (the amalgamation of Foundations projects it initializes)
 - `mulle-stacktrace` (provides `mulle_stacktrace_once`, the installed
   stacktrace callback — since 0.21.0)
 
