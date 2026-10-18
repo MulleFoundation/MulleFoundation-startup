@@ -10,12 +10,10 @@
       repo="MulleFoundation-startup";
       homepage="https://github.com/MulleFoundation/MulleFoundation-startup";
       license="BSD-3-Clause";
-      version="0.21.1";
    };
    dependencies =
    (
       {
-         description="⏩ make mulle-clang the default Objective-C compiler";
          domain="github";
          name="mulle-objc-cc";
          repo="mulle-objc-cc";
