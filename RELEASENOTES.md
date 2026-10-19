@@ -2,6 +2,17 @@
 
 
 
+
+
+
+
+* correct documented bootstrap entry point from `MulleFoundationBang` to `MulleObjCStandardFoundationBang`
+* update startup hook include path to ``<MulleObjCStandardFoundation/mulle-foundation-startup-private.inc>``
+* describe `MulleFoundation` as the amalgamation of the Foundations projects it initializes
+
+
+
+
 * correct documented bootstrap entry point from `MulleFoundationBang` to `MulleObjCStandardFoundationBang`
 * update startup hook include path to ``<MulleObjCStandardFoundation/mulle-foundation-startup-private.inc>``
 * describe `MulleFoundation` as the amalgamation of the Foundations projects it initializes
